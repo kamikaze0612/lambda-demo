@@ -1,0 +1,38 @@
+{
+  "name": "database",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "db:generate": "drizzle-kit generate",
+    "db:drop_generate": "drizzle-kit drop",
+    "studio": "drizzle-kit studio",
+    "introspect": "drizzle-kit introspect",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.38.4"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^22.15.17",
+    "drizzle-kit": "^0.31.1",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  }
+}
