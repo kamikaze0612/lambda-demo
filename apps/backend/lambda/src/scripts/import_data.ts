@@ -8,6 +8,7 @@ import {
   salaryCurrencies,
   positions,
   skills,
+  companiesToIndustries,
   schema,
 } from 'database';
 import { drizzle } from 'drizzle-orm/neon-serverless';
@@ -65,6 +66,7 @@ interface PositionRecord {
   requirements: string;
   type: number;
   salary_id: number;
+  company_id: number;
 }
 
 interface SkillRecord {
@@ -73,8 +75,7 @@ interface SkillRecord {
   position_id: number;
 }
 
-interface CompanyIndustryRecord {
-  id: number;
+interface CompanyToIndustryRecord {
   company_id: number;
   industry_id: number;
 }
@@ -177,6 +178,7 @@ async function importData() {
         requirements: record.requirements,
         type: record.type,
         salaryId: record.salary_id,
+        companyId: record.company_id,
       });
     }
     console.log(`Imported ${positionRecords.length} positions`);
@@ -192,29 +194,79 @@ async function importData() {
     }
     console.log(`Imported ${skillRecords.length} skills`);
 
-    // Import company-industry relationships (if you have this relation table)
+    // Import company-to-industry relationships
     try {
-      const companyIndustryRecords = await readCsvFile<CompanyIndustryRecord>(
-        'company_industries.csv',
-      );
-      for (const record of companyIndustryRecords) {
-        // You would need to create this table in your schema if you want to use it
+      // Try to use the new file format first
+      let companyToIndustryRecords: CompanyToIndustryRecord[] = [];
+
+      try {
+        companyToIndustryRecords = await readCsvFile<CompanyToIndustryRecord>(
+          'companies_to_industries.csv',
+        );
+      } catch (error) {
+        // If new format file doesn't exist, try to convert from old format
         console.log(
-          `Linking company ${record.company_id} with industry ${record.industry_id}`,
+          'companies_to_industries.csv not found, trying to use company_industries.csv...',
+        );
+
+        // Attempt to read the old format file and convert it
+        interface OldFormatRecord {
+          id: number;
+          company_id: number;
+          industry_id: number;
+        }
+
+        const oldRecords = await readCsvFile<OldFormatRecord>(
+          'company_industries.csv',
+        );
+
+        // Convert old format to new format
+        companyToIndustryRecords = oldRecords.map((record) => ({
+          company_id: record.company_id,
+          industry_id: record.industry_id,
+        }));
+
+        // Create the new format file for future use
+        const csvContent =
+          'company_id,industry_id\n' +
+          companyToIndustryRecords
+            .map((r) => `${r.company_id},${r.industry_id}`)
+            .join('\n');
+
+        fs.writeFileSync(
+          path.join(SCRIPT_DIR, 'companies_to_industries.csv'),
+          csvContent,
+          { encoding: 'utf-8' },
+        );
+
+        console.log(
+          'Created companies_to_industries.csv from company_industries.csv',
         );
       }
+
+      // Insert the records
+      for (const record of companyToIndustryRecords) {
+        await db.insert(companiesToIndustries).values({
+          companyId: record.company_id,
+          industryId: record.industry_id,
+        });
+      }
+
       console.log(
-        `Imported ${companyIndustryRecords.length} company-industry relationships`,
+        `Imported ${companyToIndustryRecords.length} company-to-industry relationships`,
       );
     } catch (error) {
-      console.log(
-        'No company-industry relationships to import or table not defined.',
+      console.error(
+        'Error importing company-to-industry relationships:',
+        error,
       );
     }
 
     console.log('Data import completed successfully!');
   } catch (error) {
     console.error('Error importing data:', error);
+  } finally {
+    await client.end();
   }
 }
 

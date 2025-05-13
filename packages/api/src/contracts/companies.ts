@@ -4,12 +4,14 @@ import { c } from "@/contract";
 import {
   CompaniesResponseBody,
   CompanyResponseBody,
-} from "@/schemas/dtos/companies";
+  CompaniesQuery,
+} from "@/schemas/dtos";
 
 export const companyContract = c.router({
   getCompanies: {
     method: "GET",
     path: "/companies",
+    query: CompaniesQuery,
     responses: {
       200: CompaniesResponseBody,
     },

@@ -1,7 +1,9 @@
 import { relations } from "drizzle-orm";
 import { pgTable, serial, varchar, text } from "drizzle-orm/pg-core";
 
+import { companiesToIndustries } from "./companies_to_industries";
 import { companyTranslations } from "./company_translations";
+import { positions } from "./positions";
 import { timestamps } from "./time_stamps";
 
 export const companies = pgTable("companies", () => ({
@@ -14,4 +16,6 @@ export const companies = pgTable("companies", () => ({
 
 export const companiesRelations = relations(companies, ({ many }) => ({
   translations: many(companyTranslations),
+  positions: many(positions),
+  companyToIndustries: many(companiesToIndustries),
 }));

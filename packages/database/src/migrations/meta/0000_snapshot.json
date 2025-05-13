@@ -1,5 +1,5 @@
 {
-  "id": "66244ea9-5a64-47ae-b74f-52c470e3eb5c",
+  "id": "049bb982-a5c0-4d2d-a144-23eb35879569",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -59,6 +59,72 @@
           ]
         }
       },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.companies_to_industries": {
+      "name": "companies_to_industries",
+      "schema": "",
+      "columns": {
+        "company_id": {
+          "name": "company_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "industry_id": {
+          "name": "industry_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "companies_to_industries_company_id_companies_id_fk": {
+          "name": "companies_to_industries_company_id_companies_id_fk",
+          "tableFrom": "companies_to_industries",
+          "tableTo": "companies",
+          "columnsFrom": [
+            "company_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "companies_to_industries_industry_id_industries_id_fk": {
+          "name": "companies_to_industries_industry_id_industries_id_fk",
+          "tableFrom": "companies_to_industries",
+          "tableTo": "industries",
+          "columnsFrom": [
+            "industry_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
       "policies": {},
       "checkConstraints": {},
       "isRLSEnabled": false
@@ -284,6 +350,12 @@
           "primaryKey": false,
           "notNull": false
         },
+        "company_id": {
+          "name": "company_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
         "created_at": {
           "name": "created_at",
           "type": "timestamp",
@@ -307,6 +379,19 @@
           "tableTo": "salaries",
           "columnsFrom": [
             "salary_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "positions_company_id_companies_id_fk": {
+          "name": "positions_company_id_companies_id_fk",
+          "tableFrom": "positions",
+          "tableTo": "companies",
+          "columnsFrom": [
+            "company_id"
           ],
           "columnsTo": [
             "id"

@@ -1,12 +1,78 @@
-import { CompanyModel, CompanyTranslationModel } from "@/models";
 import { z } from "zod";
 
-export const CompaniesResponseBody = CompanyModel.extend({
-  translations: CompanyTranslationModel.array(),
-}).array();
+import {
+  CompanyModel,
+  CompanyTranslationModel,
+  IndustryTranslationModel,
+  PositionModel,
+  SalaryCurrencyModel,
+} from "@/models";
 
-export const CompanyResponseBody = z.object({
-  company: CompanyModel.extend({
-    translations: CompanyTranslationModel.array(),
+export const CompaniesResponseBody = CompanyModel.pick({
+  id: true,
+  email: true,
+  phoneNumber: true,
+  websiteUrl: true,
+})
+  .extend({
+    translation: CompanyTranslationModel.pick({
+      lang: true,
+      name: true,
+      description: true,
+      address: true,
+    }),
+    positions: PositionModel.pick({
+      id: true,
+    })
+      .extend({
+        salary: SalaryCurrencyModel.pick({
+          amount: true,
+          currency: true,
+        }),
+      })
+      .array(),
+    industries: IndustryTranslationModel.pick({
+      id: true,
+      name: true,
+    }).array(),
+  })
+  .array();
+export type CompaniesResponseBody = z.infer<typeof CompaniesResponseBody>;
+
+export const CompanyResponseBody = CompanyModel.pick({
+  id: true,
+  email: true,
+  phoneNumber: true,
+  websiteUrl: true,
+}).extend({
+  translation: CompanyTranslationModel.pick({
+    lang: true,
+    name: true,
+    description: true,
+    address: true,
   }),
+  positions: PositionModel.pick({
+    id: true,
+  })
+    .extend({
+      salary: SalaryCurrencyModel.pick({
+        amount: true,
+        currency: true,
+      }),
+    })
+    .array(),
+  industries: IndustryTranslationModel.pick({
+    id: true,
+    name: true,
+  }).array(),
 });
+export type CompanyResponseBody = z.infer<typeof CompanyResponseBody>;
+
+export const CompaniesQuery = z
+  .object({
+    keyword: z.string(),
+    industry: z.coerce.number(),
+  })
+  .partial()
+  .optional();
+export type CompaniesQuery = z.infer<typeof CompaniesQuery>;

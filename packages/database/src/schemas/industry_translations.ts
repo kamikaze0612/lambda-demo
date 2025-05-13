@@ -1,13 +1,5 @@
 import { relations } from "drizzle-orm";
-import {
-  foreignKey,
-  integer,
-  pgTable,
-  primaryKey,
-  serial,
-  text,
-  varchar,
-} from "drizzle-orm/pg-core";
+import { integer, pgTable, serial, text, varchar } from "drizzle-orm/pg-core";
 
 import { industries } from "./industries";
 import { timestamps } from "./time_stamps";
