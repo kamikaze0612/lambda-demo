@@ -12,26 +12,17 @@ import {
 import { companies } from "./companies";
 import { timestamps } from "./time_stamps";
 
-export const companyTranslations = pgTable(
-  "company_translations",
-  () => ({
-    id: serial("id").primaryKey(),
-    companyId: integer("company_id").references(() => companies.id, {
-      onDelete: "cascade",
-    }),
-    lang: varchar("lang", { length: 2 }).notNull(),
-    name: varchar("name", { length: 255 }).notNull(),
-    description: text("description"),
-    ...timestamps,
+export const companyTranslations = pgTable("company_translations", () => ({
+  id: serial("id").primaryKey(),
+  companyId: integer("company_id").references(() => companies.id, {
+    onDelete: "cascade",
   }),
-  (t) => [
-    primaryKey({ columns: [t.companyId, t.lang] }),
-    foreignKey({
-      columns: [t.companyId],
-      foreignColumns: [companies.id],
-    }),
-  ]
-);
+  lang: varchar("lang", { length: 2 }).notNull(),
+  name: varchar("name", { length: 255 }).notNull(),
+  description: text("description"),
+  address: text("address"),
+  ...timestamps,
+}));
 
 export const companyTranslationsRelations = relations(
   companyTranslations,

@@ -1,14 +1,14 @@
+import { Pool } from '@neondatabase/serverless';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import type { ExtractTablesWithRelations } from 'drizzle-orm';
-import type { PgTransaction } from 'drizzle-orm/pg-core';
-import { drizzle } from 'drizzle-orm/postgres-js';
-import type {
-  PostgresJsDatabase,
-  PostgresJsQueryResultHKT,
-} from 'drizzle-orm/postgres-js';
-import postgres, { type Sql } from 'postgres';
 import { schema } from 'database';
 import type { Schema } from 'database';
+import type { ExtractTablesWithRelations } from 'drizzle-orm';
+import {
+  drizzle,
+  type NeonQueryResultHKT,
+  type NeonDatabase,
+} from 'drizzle-orm/neon-serverless';
+import type { PgTransaction } from 'drizzle-orm/pg-core';
 
 import {
   databaseClientProviderToken,
@@ -23,8 +23,7 @@ export const supabaseProviders = [
     useFactory: (configService: ConfigService) => {
       const url = configService.get<string>('database.url')!;
 
-      // Disable prefetch as it is not supported for "Transaction" pool mode
-      const client = postgres(url, { prepare: false });
+      const client = new Pool({ connectionString: url });
 
       return client;
     },
@@ -32,16 +31,18 @@ export const supabaseProviders = [
   {
     inject: [databaseClientProviderToken],
     provide: databaseProviderToken,
-    useFactory: async (client: Sql) => {
+    useFactory: async (client: Pool) => {
       const db = drizzle(client, { schema });
 
       return db;
     },
   },
 ];
-export type Database = PostgresJsDatabase<Schema>;
+
+export type Database = NeonDatabase<Schema>;
+
 export type Transaction = PgTransaction<
-  PostgresJsQueryResultHKT,
+  NeonQueryResultHKT,
   Schema,
   ExtractTablesWithRelations<Schema>
 >;
