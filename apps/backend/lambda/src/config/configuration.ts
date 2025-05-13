@@ -22,9 +22,7 @@ export const validate = (env: Record<string, any>) => {
     throw Error('ENV_VALIDATION_FAILED');
   }
 
-  const schema = ENV.merge(ENV[appEnv.data]);
-
-  const result = schema.safeParse(env);
+  const result = ENV.safeParse(env);
 
   if (result.success === false) {
     console.log(result.error);

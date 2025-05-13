@@ -1,0 +1,176 @@
+id,title,position_id
+1,JavaScript,1
+2,TypeScript,1
+3,React,1
+4,Node.js,1
+5,SQL,1
+6,Figma,2
+7,Sketch,2
+8,User Research,2
+9,Wireframing,2
+10,Prototyping,2
+11,Project Planning,3
+12,Agile Methodologies,3
+13,Team Leadership,3
+14,Budgeting,3
+15,Risk Management,3
+16,AWS,4
+17,Docker,4
+18,Kubernetes,4
+19,CI/CD Pipelines,4
+20,Infrastructure as Code,4
+21,Clothing Design,5
+22,Pattern Making,5
+23,Textile Knowledge,5
+24,Adobe Illustrator,5
+25,Fashion Trends,5
+26,Quality Control,6
+27,Supply Chain Management,6
+28,Manufacturing Processes,6
+29,Team Management,6
+30,Process Optimization,6
+31,Digital Marketing,7
+32,Brand Strategy,7
+33,Market Research,7
+34,Social Media Marketing,7
+35,Content Creation,7
+36,Process Analysis,8
+37,Data Visualization,8
+38,Requirements Gathering,8
+39,SWOT Analysis,8
+40,SQL Queries,8
+41,Portfolio Management,9
+42,Investment Analysis,9
+43,Financial Modeling,9
+44,Risk Assessment,9
+45,Market Research,9
+46,Strategic Planning,10
+47,Business Development,10
+48,Operations Management,10
+49,Executive Leadership,10
+50,Performance Optimization,10
+51,Medication Dispensing,11
+52,Patient Consultation,11
+53,Inventory Management,11
+54,Pharmaceutical Knowledge,11
+55,Healthcare Regulations,11
+56,Research Design,12
+57,Lab Techniques,12
+58,Data Analysis,12
+59,Scientific Writing,12
+60,Clinical Trials,12
+61,Laboratory Testing,13
+62,Quality Assurance,13
+63,Standard Operating Procedures,13
+64,Documentation,13
+65,Analytical Methods,13
+66,Financial Analysis,14
+67,Economic Forecasting,14
+68,Excel Modeling,14
+69,Statistical Analysis,14
+70,Data Interpretation,14
+71,Risk Assessment,15
+72,Compliance Monitoring,15
+73,Financial Regulations,15
+74,Stress Testing,15
+75,Crisis Management,15
+76,Monetary Policy Analysis,16
+77,Econometrics,16
+78,Economic Research,16
+79,Policy Development,16
+80,Statistical Modeling,16
+81,Mine Planning,17
+82,Safety Protocols,17
+83,Resource Estimation,17
+84,Ventilation Systems,17
+85,Geotechnical Analysis,17
+86,Environmental Impact Assessment,18
+87,Regulatory Compliance,18
+88,Waste Management,18
+89,Sustainability Planning,18
+90,Environmental Monitoring,18
+91,Patient Care,19
+92,Diagnostics,19
+93,Treatment Planning,19
+94,Medical Knowledge,19
+95,Clinical Documentation,19
+96,Patient Assessment,20
+97,Medication Administration,20
+98,Vital Sign Monitoring,20
+99,Medical Protocols,20
+100,Patient Support,20
+101,MRI Interpretation,21
+102,CT Scan Analysis,21
+103,X-ray Reading,21
+104,Diagnostic Imaging,21
+105,Anatomical Knowledge,21
+106,Network Architecture,22
+107,Router Configuration,22
+108,Network Security,22
+109,Troubleshooting,22
+110,CCNA/CCNP Skills,22
+111,Customer Service,23
+112,Conflict Resolution,23
+113,Problem Solving,23
+114,Communication Skills,23
+115,CRM Systems,23
+116,Sales Strategy,24
+117,Team Leadership,24
+118,Performance Tracking,24
+119,Customer Relationship Management,24
+120,Negotiation,24
+121,Investment Research,25
+122,Financial Analysis,25
+123,Market Trends,25
+124,Valuation Models,25
+125,Due Diligence,25
+126,Portfolio Management,26
+127,Asset Allocation,26
+128,Investment Strategies,26
+129,Client Relations,26
+130,Performance Reporting,26
+131,Financial Planning,27
+132,Retirement Planning,27
+133,Investment Advising,27
+134,Tax Planning,27
+135,Estate Planning,27
+136,Adobe Creative Suite,28
+137,Visual Design,28
+138,Typography,28
+139,Brand Identity,28
+140,Print Design,28
+141,Social Media Platforms,29
+142,Content Strategy,29
+143,Campaign Management,29
+144,Analytics Tracking,29
+145,Community Engagement,29
+146,Content Planning,30
+147,SEO Optimization,30
+148,Audience Research,30
+149,Editorial Calendars,30
+150,Performance Analytics,30
+151,React,31
+152,TypeScript,31
+153,HTML/CSS,31
+154,Responsive Design,31
+155,Frontend Testing,31
+156,Node.js,32
+157,Database Design,32
+158,API Development,32
+159,Authentication/Authorization,32
+160,Backend Testing,32
+161,Python,33
+162,Machine Learning,33
+163,Statistical Analysis,33
+164,Data Visualization,33
+165,SQL/NoSQL Databases,33
+166,Recruitment,34
+167,Employee Relations,34
+168,Performance Management,34
+169,Labor Law Compliance,34
+170,Training and Development,34
+171,Legal Research,35
+172,Contract Drafting,35
+173,Regulatory Compliance,35
+174,Dispute Resolution,35
+175,Corporate Law,35

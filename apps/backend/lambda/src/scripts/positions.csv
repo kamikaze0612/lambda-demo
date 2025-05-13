@@ -1,0 +1,36 @@
+id,title,description,requirements,type,salary_id
+1,Software Engineer,"Developing and maintaining web applications using modern technologies","Bachelor's degree in Computer Science or related field; 2+ years of experience in software development; Proficiency in JavaScript/TypeScript",1,1
+2,UI/UX Designer,"Creating user-centered designs for web and mobile applications","3+ years of experience in UI/UX design; Proficiency in Figma or Sketch; Portfolio demonstrating design skills",1,2
+3,Project Manager,"Managing technology projects from initiation to completion","PMP certification preferred; 5+ years of project management experience; Strong leadership and communication skills",1,3
+4,DevOps Engineer,"Building and maintaining infrastructure and deployment processes","Experience with AWS/Azure/GCP; Knowledge of CI/CD pipelines; Proficiency in containerization technologies",1,4
+5,Fashion Designer,"Creating unique cashmere clothing designs","Degree in Fashion Design; 3+ years of experience in the fashion industry; Proficiency in design software",1,5
+6,Production Manager,"Overseeing cashmere garment production process","5+ years of experience in textile or garment production; Knowledge of quality control standards; Team management skills",1,6
+7,Marketing Specialist,"Developing and implementing marketing strategies for cashmere products","Bachelor's degree in Marketing or related field; Experience with digital marketing campaigns; Creative thinking skills",1,7
+8,Business Analyst,"Analyzing business operations and proposing improvements","Bachelor's degree in Business Administration or related field; 3+ years of experience in business analysis; Strong analytical skills",1,8
+9,Investment Manager,"Managing investment portfolios and identifying investment opportunities","CFA certification; 5+ years of experience in investment management; Strong financial modeling skills",1,9
+10,Operations Director,"Overseeing daily operations across multiple business units","MBA preferred; 10+ years of operations management experience; Strategic planning and execution skills",1,10
+11,Pharmacist,"Dispensing medications and providing pharmaceutical advice","Degree in Pharmacy; Professional licensure; Knowledge of pharmaceutical products",2,11
+12,Research Scientist,"Conducting pharmaceutical research and development","PhD in Pharmaceutical Sciences or related field; Experience in drug development; Published research papers",2,12
+13,Quality Control Analyst,"Ensuring pharmaceutical products meet quality standards","Degree in Chemistry or related field; Experience with laboratory testing procedures; Attention to detail",2,13
+14,Financial Analyst,"Analyzing economic trends and providing financial forecasts","Degree in Finance or Economics; Strong analytical skills; Proficiency in financial modeling",1,14
+15,Risk Manager,"Identifying and mitigating financial risks","Certification in Risk Management; Experience in banking or financial services; Knowledge of regulatory requirements",1,15
+16,Monetary Policy Specialist,"Analyzing economic data and contributing to monetary policy decisions","Masters or PhD in Economics; Experience with economic modeling; Strong research skills",1,16
+17,Mining Engineer,"Planning and overseeing mining operations","Degree in Mining Engineering; Experience in coal mining operations; Knowledge of safety regulations",2,17
+18,Environmental Specialist,"Ensuring mining operations comply with environmental regulations","Degree in Environmental Science; Experience in environmental impact assessment; Knowledge of environmental legislation",2,18
+19,Medical Doctor,"Providing healthcare services to patients","Medical degree; Valid medical license; Specialization in relevant field",2,19
+20,Nurse,"Assisting doctors and providing patient care","Nursing degree; Valid nursing license; Experience in healthcare settings",2,20
+21,Radiologist,"Interpreting medical imaging to diagnose conditions","Medical degree with specialization in Radiology; Experience with various imaging technologies; Attention to detail",2,21
+22,Network Engineer,"Designing and implementing telecommunications networks","Degree in Computer Engineering or related field; CCNA/CCNP certification; Experience with network infrastructure",1,22
+23,Customer Service Representative,"Handling customer inquiries and resolving issues","High school diploma; Customer service experience; Strong communication skills",1,23
+24,Sales Manager,"Developing sales strategies and managing sales team","Bachelor's degree in Business or related field; 5+ years of sales experience; Team management skills",1,24
+25,Investment Analyst,"Researching investment opportunities and making recommendations","Degree in Finance or Economics; CFA certification preferred; Strong analytical skills",1,25
+26,Asset Manager,"Managing client portfolios and investment strategies","Degree in Finance; 5+ years of experience in asset management; Series 7 and 63 licenses preferred",1,26
+27,Financial Advisor,"Providing financial planning and investment advice to clients","Degree in Finance or related field; CFP certification; Knowledge of investment products",1,27
+28,Graphic Designer,"Creating visual concepts for digital and print media","Degree in Graphic Design; Proficiency in Adobe Creative Suite; Portfolio of design work",1,28
+29,Social Media Manager,"Managing company's social media presence and campaigns","Degree in Marketing or Communications; Experience with social media platforms; Creative content creation skills",1,29
+30,Content Strategist,"Developing content strategy aligned with business goals","Degree in Marketing or Communications; 3+ years of content creation experience; SEO knowledge",1,30
+31,Frontend Developer,"Developing user interfaces using React and modern web technologies","Bachelor's degree in Computer Science or related field; 3+ years of experience with React; Strong TypeScript skills",1,31
+32,Backend Developer,"Building and maintaining server-side applications","Bachelor's degree in Computer Science or related field; 3+ years of experience with Node.js; Database design skills",1,32
+33,Data Scientist,"Analyzing complex datasets to extract insights and patterns","Masters or PhD in Computer Science, Statistics, or related field; Experience with machine learning; Python programming skills",1,33
+34,HR Manager,"Managing human resources functions including recruitment and employee relations","Bachelor's degree in Human Resources or related field; 5+ years of HR experience; Knowledge of Mongolian labor laws",1,34
+35,Legal Counsel,"Providing legal advice and ensuring regulatory compliance","Law degree; Bar admission; 5+ years of legal experience in corporate law",1,35
