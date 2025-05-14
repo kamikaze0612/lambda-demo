@@ -1,0 +1,78 @@
+{
+  "layout": {
+    "title": "Lambda - Find Your Perfect Match",
+    "description": "Connect with top companies and talents. Whether you're hiring or looking for your next opportunity, Lambda makes it simple."
+  },
+  "navbar": {
+    "navItems": {
+      "home": "Home",
+      "jobs": {
+        "title": "Jobs",
+        "items": {
+          "allJobs": "All Jobs",
+          "technology": "Technology",
+          "business": "Business",
+          "media": "Media"
+        }
+      },
+      "outsourcing": {
+        "title": "Outsourcing",
+        "items": {
+          "howItWorks": "How It Works",
+          "forCompanies": "For Companies",
+          "forTalents": "For Talents"
+        }
+      },
+      "whatIsLambda": {
+        "title": "What is Lambda?",
+        "items": {
+          "about": "About Us",
+          "howItWorks": "How It Works",
+          "successStories": "Success Stories"
+        }
+      },
+      "language": {
+        "mn": "Mongolian",
+        "en": "English"
+      },
+      "signIn": "Sign In"
+    }
+  },
+  "companies": {
+    "hero": {
+      "title": {
+        "regular": "Find Your Perfect",
+        "highlight": "Match"
+      },
+      "description": "Connect with top companies and talents. Whether you're hiring or looking for your next opportunity, Lambda makes it simple.",
+      "searchPlaceholder": "Search with cyrillic and latin characters... Example: Unitel, Юнител",
+      "searchButton": "Search"
+    },
+    "stats": {
+      "activeCompanies": "Active Companies",
+      "openPositions": "Open Positions",
+      "hired": "Talents Hired",
+      "successRate": "Success Rate"
+    },
+    "companiesList": {
+      "title": {
+        "discover": "Discover",
+        "highlight": "Top Companies"
+      },
+      "company": {
+        "openPositions": "{num} open positions",
+        "detailButton": "View Positions",
+        "featured": "Rising Star"
+      }
+    }
+  },
+  "footer": {
+    "title": "Ready to Find Your Perfect Match?",
+    "description": "Join over 10,000 professionals who found their dream job through Lambda",
+    "buttons": {
+      "forJobSeekers": "For Job Seekers",
+      "forEmployers": "For Employers"
+    },
+    "usersOnline": "100 users online now"
+  }
+}

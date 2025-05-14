@@ -13,6 +13,7 @@ export const CompaniesResponseBody = CompanyModel.pick({
   email: true,
   phoneNumber: true,
   websiteUrl: true,
+  isFeatured: true,
 })
   .extend({
     translation: CompanyTranslationModel.pick({

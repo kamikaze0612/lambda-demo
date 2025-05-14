@@ -29,6 +29,7 @@ export class CompaniesService {
       email: data.email,
       phoneNumber: data.phoneNumber,
       websiteUrl: data.websiteUrl,
+      isFeatured: data.isFeatured,
       translation: data.translations.find(Boolean),
       positions: data.positions.map((position: any) => ({
         id: position.id,
