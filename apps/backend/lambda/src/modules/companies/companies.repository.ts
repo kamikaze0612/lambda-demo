@@ -6,8 +6,20 @@ import {
   companiesToIndustries,
   industryTranslations,
   salaryCurrencies,
+  positions,
+  salaries,
 } from 'database';
-import { and, eq, exists, ilike, SQL } from 'drizzle-orm';
+import {
+  and,
+  asc,
+  count,
+  desc,
+  eq,
+  exists,
+  ilike,
+  sql,
+  SQL,
+} from 'drizzle-orm';
 
 import { databaseProviderToken } from '@/common/constants/provider_tokens.constants';
 import type { Database } from '@/modules/database/database.providers';
@@ -53,6 +65,10 @@ export class CompaniesRepository {
           },
         },
       },
+      orderBy:
+        query?.order === 'asc'
+          ? asc(this.mapCompaniesSorting(query))
+          : desc(this.mapCompaniesSorting(query)),
     });
   }
 
@@ -129,5 +145,48 @@ export class CompaniesRepository {
     }
 
     return where;
+  }
+
+  private mapCompaniesSorting(query: CompaniesQuery = {}) {
+    const { sort } = query;
+
+    switch (sort) {
+      case 'positions':
+        return sql`(
+          SELECT sub.positions_count
+          FROM (
+            SELECT companies.id, COUNT(positions.id) AS positions_count
+            FROM companies
+            LEFT JOIN positions ON positions.company_id = companies.id
+            GROUP BY companies.id
+          ) AS sub
+          WHERE sub.id = companies.id
+        )`;
+      case 'averageSalary':
+        return sql`(
+          SELECT sub.average_salary
+          FROM (
+            SELECT
+              companies.id,
+              AVG(salary_currencies.amount) AS average_salary
+            FROM
+              companies
+            JOIN
+              positions ON positions.company_id = companies.id
+            JOIN
+              salaries ON salaries.id = positions.salary_id
+            JOIN
+              salary_currencies ON salary_currencies.salary_id = salaries.id
+            GROUP BY
+              companies.id
+          ) AS sub
+          WHERE sub.id = companies.id
+        )`;
+      default:
+        return sql`
+          SELECT companies.createdAt
+          FROM companies;
+        `;
+    }
   }
 }

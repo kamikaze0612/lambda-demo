@@ -59,6 +59,32 @@
         "discover": "Discover",
         "highlight": "Top Companies"
       },
+      "filter": {
+        "placeholder": "Select Industry",
+        "items": {
+          "1": "Information Technology",
+          "2": "Finance and Banking",
+          "3": "Mining",
+          "4": "Manufacturing",
+          "5": "Telecommunications"
+        }
+      },
+      "sort": {
+        "positions": {
+          "placeholder": "Sort by positions",
+          "items": {
+            "1": "Low to High",
+            "2": "High to Low"
+          }
+        },
+        "averageSalary": {
+          "placeholder": "Sort by average salary",
+          "items": {
+            "1": "Low to High",
+            "2": "High to Low"
+          }
+        }
+      },
       "company": {
         "openPositions": "{num} open positions",
         "detailButton": "View Positions",

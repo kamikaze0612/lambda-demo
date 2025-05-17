@@ -21,6 +21,13 @@ import { client } from "@/service/client";
 import { Badge } from "@/components/ui/badge";
 import { getTranslations } from "next-intl/server";
 import { Footer } from "@/components/footer";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const HomePage = async () => {
   const t = await getTranslations("companies");
@@ -100,13 +107,74 @@ const HomePage = async () => {
 
       {/* Main Content */}
       <section className="container mx-auto px-4 py-12">
-        <div className="mb-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <div className="mb-8 flex items-center justify-between ">
           <h2 className="text-2xl font-bold text-gray-600 tracking-tight">
             {t("companiesList.title.discover")}{" "}
             <span className="text-gray-900">
               {t("companiesList.title.highlight")}
             </span>
           </h2>
+
+          <div className="flex gap-3 items-center">
+            <Select>
+              <SelectTrigger className="bg-white w-[200px]">
+                <SelectValue
+                  placeholder={t("companiesList.filter.placeholder")}
+                />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="1">
+                  {t("companiesList.filter.items.1")}
+                </SelectItem>
+                <SelectItem value="2">
+                  {t("companiesList.filter.items.2")}
+                </SelectItem>
+                <SelectItem value="3">
+                  {t("companiesList.filter.items.3")}
+                </SelectItem>
+                <SelectItem value="4">
+                  {t("companiesList.filter.items.4")}
+                </SelectItem>
+                <SelectItem value="5">
+                  {t("companiesList.filter.items.5")}
+                </SelectItem>
+              </SelectContent>
+            </Select>
+
+            <Select>
+              <SelectTrigger className="bg-white w-[200px]">
+                <SelectValue
+                  placeholder={t("companiesList.sort.positions.placeholder")}
+                />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="1">
+                  {t("companiesList.sort.positions.items.1")}
+                </SelectItem>
+                <SelectItem value="2">
+                  {t("companiesList.sort.positions.items.2")}
+                </SelectItem>
+              </SelectContent>
+            </Select>
+
+            <Select>
+              <SelectTrigger className="bg-white w-[200px]">
+                <SelectValue
+                  placeholder={t(
+                    "companiesList.sort.averageSalary.placeholder"
+                  )}
+                />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="1">
+                  {t("companiesList.sort.averageSalary.items.1")}
+                </SelectItem>
+                <SelectItem value="2">
+                  {t("companiesList.sort.averageSalary.items.2")}
+                </SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

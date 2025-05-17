@@ -73,6 +73,8 @@ export const CompaniesQuery = z
   .object({
     keyword: z.string(),
     industry: z.coerce.number(),
+    sort: z.enum(["positions", "averageSalary"]),
+    order: z.enum(["asc", "desc"]),
   })
   .partial()
   .optional();
