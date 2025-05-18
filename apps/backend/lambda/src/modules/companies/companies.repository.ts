@@ -17,6 +17,7 @@ import {
   eq,
   exists,
   ilike,
+  inArray,
   sql,
   SQL,
 } from 'drizzle-orm';
@@ -121,7 +122,7 @@ export class CompaniesRepository {
             .where(
               and(
                 eq(companiesToIndustries.companyId, companies.id),
-                eq(companiesToIndustries.industryId, industry),
+                inArray(companiesToIndustries.industryId, industry),
               ),
             ),
         ),
@@ -162,6 +163,7 @@ export class CompaniesRepository {
           ) AS sub
           WHERE sub.id = companies.id
         )`;
+        break;
       case 'averageSalary':
         return sql`(
           SELECT sub.average_salary
@@ -182,11 +184,10 @@ export class CompaniesRepository {
           ) AS sub
           WHERE sub.id = companies.id
         )`;
+        break;
       default:
-        return sql`
-          SELECT companies.createdAt
-          FROM companies;
-        `;
+        return companies.createdAt;
+        break;
     }
   }
 }

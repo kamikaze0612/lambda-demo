@@ -8,6 +8,15 @@ import {
   SalaryCurrencyModel,
 } from "@/models";
 
+const stringToJSONSchema = z.string().transform((str, ctx) => {
+  try {
+    return JSON.parse(str);
+  } catch (error) {
+    ctx.addIssue({ code: "custom", message: "Invalid JSON format." });
+    return z.NEVER;
+  }
+});
+
 export const CompaniesResponseBody = CompanyModel.pick({
   id: true,
   email: true,
@@ -72,8 +81,10 @@ export type CompanyResponseBody = z.infer<typeof CompanyResponseBody>;
 export const CompaniesQuery = z
   .object({
     keyword: z.string(),
-    industry: z.coerce.number(),
-    sort: z.enum(["positions", "averageSalary"]),
+    industry: stringToJSONSchema.pipe(z.coerce.number().array()),
+    minAvgSalary: z.coerce.number(),
+    maxAvgSalary: z.coerce.number(),
+    sort: z.enum(["positions", "averageSalary", "createdAt"]),
     order: z.enum(["asc", "desc"]),
   })
   .partial()

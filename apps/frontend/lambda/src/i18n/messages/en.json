@@ -55,10 +55,9 @@
       "successRate": "Success Rate"
     },
     "companiesList": {
-      "title": {
-        "discover": "Discover",
-        "highlight": "Top Companies"
-      },
+      "top_companies": "Top Companies",
+      "title": "Companies",
+      "seeAll": "See all companies",
       "filter": {
         "placeholder": "Select Industry",
         "items": {
@@ -80,15 +79,68 @@
         "averageSalary": {
           "placeholder": "Sort by average salary",
           "items": {
-            "1": "Low to High",
-            "2": "High to Low"
+            "1": "Average salary: Low to High",
+            "2": "Average salary: High to Low"
           }
         }
       },
       "company": {
         "openPositions": "{num} open positions",
         "detailButton": "View Positions",
-        "featured": "Rising Star"
+        "featured": "Partner"
+      }
+    },
+    "filters": {
+      "title": "Search companies",
+      "search": {
+        "placeholder": "Search with cyrillic and latin characters...",
+        "button": "Search"
+      },
+      "sort": {
+        "field": {
+          "title": "Sort by",
+          "items": {
+            "1": "Average salary",
+            "2": "Open positions",
+            "3": "Joined date"
+          }
+        },
+        "order": {
+          "title": "Order",
+          "asc": "Ascending",
+          "desc": "Descending"
+        }
+      },
+      "industry": {
+        "title": "Industry",
+        "items": {
+          "1": "Information Technology",
+          "2": "Finance and Banking",
+          "3": "Mining",
+          "4": "Manufacturing",
+          "5": "Telecommunications"
+        }
+      },
+      "size": {
+        "title": "Company size",
+        "items": {
+          "1": "1-10 employees",
+          "2": "11-50 employees",
+          "3": "51-200 employees",
+          "4": "201-500 employees"
+        }
+      },
+      "location": {
+        "title": "Location",
+        "items": {
+          "1": "Ulaanbaatar",
+          "2": "Erdenet",
+          "3": "Darkhan"
+        }
+      },
+      "controls": {
+        "apply": "Apply",
+        "clear": "Clear"
       }
     }
   },
